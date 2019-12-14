@@ -1,5 +1,4 @@
 import UIKit
-import Foundation
 import Nuke
 
 class HomeTableViewCell: UITableViewCell {

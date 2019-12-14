@@ -1,5 +1,4 @@
 import UIKit
-import DataManager
 
 protocol SplashRouting: RoutingType {
     func showSignIn()
