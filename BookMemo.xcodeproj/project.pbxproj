@@ -89,6 +89,14 @@
 		5BD6657623367766009A66B6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6657423367765009A66B6 /* Fabric.framework */; };
 		5BD6657723367766009A66B6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6657523367765009A66B6 /* Crashlytics.framework */; };
 		5BFDE14E23A4DB2F00F0EBD9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE14D23A4DB2F00F0EBD9 /* Constant.swift */; };
+		5BFDE15223A50E3E00F0EBD9 /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15123A50E3E00F0EBD9 /* BookEntity.swift */; };
+		5BFDE15523A5106D00F0EBD9 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15423A5106D00F0EBD9 /* UIViewController+Rx.swift */; };
+		5BFDE15723A5152200F0EBD9 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15623A5152200F0EBD9 /* BookDetailView.swift */; };
+		5BFDE15923A5211900F0EBD9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15823A5211900F0EBD9 /* UIView+Extensions.swift */; };
+		5BFDE15D23A539F800F0EBD9 /* SignInUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15C23A539F800F0EBD9 /* SignInUI.swift */; };
+		5BFDE15F23A5437700F0EBD9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15E23A5437700F0EBD9 /* Date+Extensions.swift */; };
+		5BFDE16123A551F600F0EBD9 /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16023A551F600F0EBD9 /* UIType.swift */; };
+		5BFDE16323A5611E00F0EBD9 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* BookDetailViewController.swift */; };
 		5E1367DA22C74948006E5475 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* BookDetailViewModel.swift */; };
@@ -230,6 +238,14 @@
 		5BD6657423367765009A66B6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		5BD6657523367765009A66B6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5BFDE14D23A4DB2F00F0EBD9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5BFDE15123A50E3E00F0EBD9 /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
+		5BFDE15423A5106D00F0EBD9 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		5BFDE15623A5152200F0EBD9 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		5BFDE15823A5211900F0EBD9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		5BFDE15C23A539F800F0EBD9 /* SignInUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUI.swift; sourceTree = "<group>"; };
+		5BFDE15E23A5437700F0EBD9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		5BFDE16023A551F600F0EBD9 /* UIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
+		5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
@@ -431,6 +447,7 @@
 			children = (
 				5BAF50D02316CDF200584FB1 /* ViewModelType.swift */,
 				5BAF50D42316D7C200584FB1 /* RoutingType.swift */,
+				5BFDE16023A551F600F0EBD9 /* UIType.swift */,
 				5BA8F4CB239FDEC900C354D2 /* AppFactory.swift */,
 			);
 			path = Common;
@@ -633,6 +650,7 @@
 				5E1D964922F03F5900CD332B /* BookListEntity.swift */,
 				5E1D965122F0566D00CD332B /* RegisterBookEntity.swift */,
 				5E8A657222F13ACE00C43436 /* UpdateBookEntity.swift */,
+				5BFDE15123A50E3E00F0EBD9 /* BookEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -643,6 +661,7 @@
 				5EFCE1A422C7270E004B8D3C /* SignInViewController.swift */,
 				5EFCE1A622C72C4D004B8D3C /* SignInViewModel.swift */,
 				5EFCE1A922C72E64004B8D3C /* SignInRouting.swift */,
+				5BFDE15C23A539F800F0EBD9 /* SignInUI.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -663,6 +682,7 @@
 				5E1367D722C748FF006E5475 /* BookDetailViewController.swift */,
 				5E1367D922C74948006E5475 /* BookDetailViewModel.swift */,
 				5EE97BD923332CD40048F422 /* BookDetailRouting.swift */,
+				5BFDE15623A5152200F0EBD9 /* BookDetailView.swift */,
 			);
 			path = BookDetail;
 			sourceTree = "<group>";
@@ -695,6 +715,7 @@
 				5EFCE1B522C73172004B8D3C /* HomeViewModel.swift */,
 				5EFCE1B722C7318A004B8D3C /* HomeRouting.swift */,
 				5EFCE1B922C73214004B8D3C /* HomeTableViewCell.swift */,
+				5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -704,11 +725,14 @@
 			children = (
 				5E1367EB22C7BD44006E5475 /* NSObject+Extensions.swift */,
 				5EEDA4E42303F35B000E7E93 /* UIViewController+Extensions.swift */,
-				5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */,
 				5B3D95C6231808ED00F917D8 /* UIAlertController+Extensions.swift */,
 				5E066855231B89440045D901 /* UIImage+Extension.swift */,
 				5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */,
 				5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */,
+				5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */,
+				5BFDE15423A5106D00F0EBD9 /* UIViewController+Rx.swift */,
+				5BFDE15823A5211900F0EBD9 /* UIView+Extensions.swift */,
+				5BFDE15E23A5437700F0EBD9 /* Date+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -977,6 +1001,7 @@
 				5BA8F4BF239FD76300C354D2 /* SignUpAPI.swift in Sources */,
 				5BA8F4B9239FD74D00C354D2 /* Session+Extensions.swift in Sources */,
 				5BA8F4B5239FD73E00C354D2 /* BookListEntity.swift in Sources */,
+				5BFDE15223A50E3E00F0EBD9 /* BookEntity.swift in Sources */,
 				5BA8F4C2239FD76F00C354D2 /* BookModel.swift in Sources */,
 				5BA8F4B6239FD74100C354D2 /* SignUpEntity.swift in Sources */,
 				5BA8F4C0239FD76700C354D2 /* SignOutAPI.swift in Sources */,
@@ -998,6 +1023,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFDE15923A5211900F0EBD9 /* UIView+Extensions.swift in Sources */,
+				5BFDE15F23A5437700F0EBD9 /* Date+Extensions.swift in Sources */,
 				5EEDA4E52303F35B000E7E93 /* UIViewController+Extensions.swift in Sources */,
 				5E1367DA22C74948006E5475 /* BookDetailViewModel.swift in Sources */,
 				5EFCE1AC22C72F0A004B8D3C /* SignUpViewController.swift in Sources */,
@@ -1014,6 +1041,7 @@
 				5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */,
 				5EFCE1AA22C72E64004B8D3C /* SignInRouting.swift in Sources */,
 				5EFCE1A522C7270E004B8D3C /* SignInViewController.swift in Sources */,
+				5BFDE15D23A539F800F0EBD9 /* SignInUI.swift in Sources */,
 				5E1367E022C7498C006E5475 /* SignOutViewModel.swift in Sources */,
 				5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */,
 				5BA8F4CC239FDEC900C354D2 /* AppFactory.swift in Sources */,
@@ -1025,9 +1053,13 @@
 				5EFCE1BC22C732C4004B8D3C /* BookRegistrationViewController.swift in Sources */,
 				5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */,
 				5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */,
+				5BFDE15723A5152200F0EBD9 /* BookDetailView.swift in Sources */,
+				5BFDE16123A551F600F0EBD9 /* UIType.swift in Sources */,
 				5E1367E222C7499D006E5475 /* SignOutRouting.swift in Sources */,
+				5BFDE16323A5611E00F0EBD9 /* HomeDataSource.swift in Sources */,
 				5B7420B3239D418300C699B3 /* TestModule.swift in Sources */,
 				5EEEB5192334C47900A87837 /* TutorialView.swift in Sources */,
+				5BFDE15523A5106D00F0EBD9 /* UIViewController+Rx.swift in Sources */,
 				5EFCE1BE22C73303004B8D3C /* BookRegistrationViewModel.swift in Sources */,
 				5EFCE1AE22C72F2B004B8D3C /* SignUpViewModel.swift in Sources */,
 				5E4EA14C2333AF2F00DDCE44 /* TutorialViewController.swift in Sources */,
