@@ -9,8 +9,6 @@ public protocol BookDataStore {
 
 public struct BookDataStoreImpl: BookDataStore {
 
-    public init() {}
-    
     public func fetch(with info: BookListModel) -> Observable<FetchBookListAPI.Response> {
         let request = FetchBookListAPI.Request(info: info)
         return Session.rx_sendRequest(request: request)
@@ -27,8 +25,8 @@ public struct BookDataStoreImpl: BookDataStore {
     }
 }
 
-struct BookDataStoreFactory {
-    static func createBookDataStore() -> BookDataStore {
+public struct BookDataStoreFactory {
+    public static func make() -> BookDataStore {
         return BookDataStoreImpl()
     }
 }

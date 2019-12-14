@@ -9,8 +9,6 @@ public protocol AccountDataStore {
 
 public struct AccountDataStoreImpl: AccountDataStore {
 
-    public init() {}
-
     public func SignIn(with info: AuthModel) -> Observable<SignInAPI.Response> {
         let request = SignInAPI.Request(info: info)
         return Session.rx_sendRequest(request: request)
@@ -38,8 +36,8 @@ public struct AccountDataStoreImpl: AccountDataStore {
     }
 }
 
-struct AccountDataStoreFactory {
-    static func createUserAccountDataStore() -> AccountDataStore {
+public struct AccountDataStoreFactory {
+    public static func make() -> AccountDataStore {
         return AccountDataStoreImpl()
     }
 }
