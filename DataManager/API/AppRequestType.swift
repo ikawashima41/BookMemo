@@ -33,7 +33,7 @@ public protocol AppRequestType: Request {}
 extension AppRequestType {
     // BaseURL
     public var baseURL: URL {
-        return URL(string: "http://54.250.239.8")!
+        return URL(string: Constant.baseUrl)!
     }
 
     // HeaderFields
