@@ -15,24 +15,28 @@ final class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    struct PagingConstants {
-        static let limitPageNum: Int = 5
-        static let currentPageNum: Int = 1
-    }
-
-    private var limit = PagingConstants.limitPageNum
-    private var currentPage = PagingConstants.currentPageNum
-
     private lazy var addButton: UIBarButtonItem = {
         let addButton = UIBarButtonItem(title: "追加", style: .plain, target: self, action: #selector(showBookRegistrationVC))
         return addButton
     }()
 
-    private lazy var tableView: UITableView = {
+    private lazy var dataSource: HomeDataSource = {
+        let dataSource = HomeDataSource(viewModel: viewModel) { [unowned self] (book) in
+            self.routing.showBookDetailVC(book: book)
+        }
+        dataSource.configure(with: tableView)
+        return dataSource
+    }()
+
+    private lazy var routing: HomeRouting = {
+        let routing = HomeRoutingImpl()
+        routing.viewController = self
+        return routing
+    }()
+
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = Constants.Size.tableViewRowHeight
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.className)
         return tableView
     }()
@@ -58,33 +62,22 @@ final class HomeViewController: UIViewController {
         routing.showBookRegistrationVC()
     }
 
-    private lazy var routing: HomeRouting = {
-        let routing = HomeRoutingImpl()
-        routing.viewController = self
-        return routing
-    }()
-
     private let disposeBag: DisposeBag = .init()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+
         setupUI()
-        setupNavItem()
         bindUI()
     }
 }
 
 extension HomeViewController {
     private func setupUI() {
-
-        [tableView, addLoadingPageButton]
-            .forEach {
-                self.view.addSubview($0)
-                $0.translatesAutoresizingMaskIntoConstraints = false
-        }
-
-        view.addSubview(activityIndicator)
+        title = "書籍一覧"
+        view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = addButton
+        view.add(tableView, addLoadingPageButton, activityIndicator)
 
         [tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
          tableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
@@ -100,14 +93,12 @@ extension HomeViewController {
         }
     }
 
-    private func setupNavItem() {
-        title = "書籍一覧"
-        navigationItem.rightBarButtonItem = addButton
-    }
-
     private func bindUI() {
 
-        let input = HomeViewModel.Input(didReloadButtonTapped: addLoadingPageButton.rx.tap.asObservable(), viewWillAppear: rx.sentMessage(#selector(viewWillAppear(_:))).asObservable())
+        let input = HomeViewModel.Input(
+            didReloadButtonTapped: addLoadingPageButton.rx.tap.asObservable(),
+            viewWillAppear: self.rx.viewWillAppear.asObservable()
+        )
 
         let output = viewModel.transform(input: input)
 
@@ -128,7 +119,7 @@ extension HomeViewController {
             self?.createAlert(message: error.localizedDescription)
         }).disposed(by: disposeBag)
 
-        output.firstResult.subscribe(onNext: { [weak self] result in
+        output.pagingResult.subscribe(onNext: { [weak self] result in
             self?.viewModel.books += result.result.map {
                 BookInfomation(
                     id: $0.id,
@@ -141,29 +132,8 @@ extension HomeViewController {
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
 
-        output.firstError.subscribe(onNext: { [weak self] error in
+        output.pagingError.subscribe(onNext: { [weak self] error in
             self?.createAlert(message: error.localizedDescription)
         }).disposed(by: disposeBag)
-    }
-}
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.books.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // cellの生成
-         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className, for: indexPath) as! HomeTableViewCell
-
-        cell.accessoryType = .disclosureIndicator
-        cell.configureWithBook(book: viewModel.books[indexPath.row])
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let book = viewModel.books[indexPath.row]
-        routing.showBookDetailVC(book: book)
     }
 }

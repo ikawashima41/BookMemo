@@ -3,7 +3,7 @@ import Lottie
 
 final class SplashViewController: UIViewController {
 
-    struct SplashAnimation {
+    private struct SplashAnimation {
         static let foxAnimation = "splash"
     }
 
@@ -15,8 +15,7 @@ final class SplashViewController: UIViewController {
 
     private var animationView: AnimationView = {
         let animationView = AnimationView()
-        let animation = Animation.named(SplashAnimation.foxAnimation)
-        animationView.animation = animation
+        animationView.animation = Animation.named(SplashAnimation.foxAnimation)
         animationView.contentMode = .scaleAspectFill
         animationView.backgroundColor = .clear
         animationView.animationSpeed = 5
@@ -29,15 +28,19 @@ final class SplashViewController: UIViewController {
 
         title = "Splash"
         view.backgroundColor = .lightGray
-        view.addSubview(animationView)
-        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.add(animationView)
         animationView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
         animationView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 50).isActive = true
         animationView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -50).isActive = true
         animationView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80).isActive = true
     }
 
-    func showAnimation() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        showAnimation()
+    }
+
+    private func showAnimation() {
         animationView.play { [weak self] _ in
             self?.animationView.removeFromSuperview()
             //if 2回目の起動時はログイン {
@@ -45,10 +48,5 @@ final class SplashViewController: UIViewController {
             //}
             self?.routing.showSignIn()
         }
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        showAnimation()
     }
 }

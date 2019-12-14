@@ -1,7 +1,7 @@
 import UIKit
 
 extension TutorialView {
-    enum Layout {
+    enum LayoutStyle {
         case first
         case second
         case third
@@ -61,32 +61,26 @@ final class TutorialView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupUI() {
-        self.backgroundColor = .lightGray
-        self.addSubview(descriptionImageView)
-        self.addSubview(titleLabel)
-        self.addSubview(descriptionTextView)
+    func applyView(from view: TutorialView.LayoutStyle) {
+        titleLabel.text = view.title
+        descriptionTextView.text = view.description
+    }
 
-        descriptionImageView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupUI() {
+        self.backgroundColor = .lightGray
+        self.add(descriptionImageView, titleLabel, descriptionTextView)
+
         descriptionImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         descriptionImageView.heightAnchor.constraint(equalToConstant: 400).isActive = true
         descriptionImageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         descriptionImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 80).isActive = true
 
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.topAnchor.constraint(equalTo: descriptionImageView.bottomAnchor, constant: 30).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
 
-        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         descriptionTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30).isActive = true
         descriptionTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         descriptionTextView.widthAnchor.constraint(equalToConstant: 300).isActive = true
         descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-    }
-
-    func applyUI(view: TutorialView.Layout) {
-        titleLabel.text = view.title
-        descriptionTextView.text = view.description
-
     }
 }

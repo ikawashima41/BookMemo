@@ -10,7 +10,6 @@ final class SignOutViewController: UIViewController {
         button.setTitle("ログアウト", for: .normal)
         button.layer.cornerRadius = 8
         button.layer.borderWidth = 2
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
@@ -36,25 +35,27 @@ final class SignOutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "設定"
+        view.backgroundColor = .white
 
         setupLayout()
         bindUI()
     }
 
     private func setupLayout() {
-        view.addSubview(SignOutButton)
-        view.backgroundColor = .white
-
-        // TODO: - のちほどレイアウト用ライブラリ、もしくはExtension導入
-        SignOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        SignOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
-        SignOutButton.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        SignOutButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        view.add(SignOutButton)
+        SignOutButton.anchor()
+            .centerX(to: view.centerXAnchor)
+            .top(to: view.topAnchor, constant: 200)
+            .width(constant: 250)
+            .height(constant: 100)
+            .activate()
     }
 
     private func bindUI() {
 
-        let input = SignOutViewModel.Input(didButtonTapped: SignOutButton.rx.tap.asObservable())
+        let input = SignOutViewModel.Input(didButtonTapped:
+            SignOutButton.rx.tap.asObservable()
+        )
 
         let output = viewModel.transform(input: input)
 
@@ -62,7 +63,6 @@ final class SignOutViewController: UIViewController {
             .subscribe(onNext: { [weak self] _ in
                 self?.routing.showSignIn()
             }).disposed(by: disposeBag)
-
 
         output.error
             .subscribe(onNext: { [weak self] error in

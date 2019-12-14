@@ -16,12 +16,6 @@ final class BookRegistrationViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private let dateFormat: DateFormatter = {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyyy/MM/dd"
-        return dateFormat
-    }()
-
     private let inputDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -123,8 +117,7 @@ final class BookRegistrationViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.textAlignment = .center
         textField.textColor = .gray
-        textField.text = dateFormat.string(from: inputDatePicker.date)
-        // textFieldにdatePicker、toolBarをセット
+        textField.text = Date.convertToString(from: inputDatePicker.date)
         textField.inputView = inputDatePicker
         textField.inputAccessoryView = pickerToolBar
         return textField
@@ -156,19 +149,11 @@ final class BookRegistrationViewController: UIViewController {
 
     @objc private func didToolBarButtonTapped(_ sender: UIBarButtonItem) {
         let pickerDate = inputDatePicker.date
-        purchaseDateTextField.text = dateFormat.string(from: pickerDate as Date)
+        purchaseDateTextField.text = Date.convertToString(from: pickerDate as Date)
         view.endEditing(true)
     }
 
-    //==================================================
-    // MARK: - Rx
-    //==================================================
-
     private let disposeBag: DisposeBag = .init()
-
-    //==================================================
-    // MARK: - UIViewController override
-    //==================================================
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,10 +169,7 @@ final class BookRegistrationViewController: UIViewController {
 extension BookRegistrationViewController {
     private func setupUI() {
 
-        [bookImageView, imagePutButton, bookNameLabel, bookNameTextField, priceLabel, priceTextField, purchaseDateLabel, purchaseDateTextField].forEach {
-            self.view.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        view.add(bookImageView, imagePutButton, bookNameLabel, bookNameTextField, priceLabel, priceTextField, purchaseDateLabel, purchaseDateTextField)
 
         [
          bookImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Constraint.bookImageTopConstraint),
@@ -235,7 +217,13 @@ extension BookRegistrationViewController {
     }
 
     private func bindUI() {
-        let input = BookRegistrationViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable())
+        let input = BookRegistrationViewModel.Input(
+            didSaveButtonTapped: saveButton.rx.tap.asObservable(),
+            bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(),
+            priceText: priceTextField.rx.text.orEmpty.asObservable(),
+            purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(),
+            selectedImage: imageSubject.asObservable()
+        )
 
         let output = viewModel.transform(input: input)
 

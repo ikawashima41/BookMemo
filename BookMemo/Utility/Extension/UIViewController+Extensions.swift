@@ -1,19 +1,18 @@
-// 参考: https://medium.com/@kmlong1183/extension-approach-to-keeping-uitextfields-in-sight-9fe8695c2ac6
+// 参考:https://medium.com/@kmlong1183/extension-approach-to-keeping-uitextfields-in-sight-9fe8695c2ac6
 import UIKit
 import ObjectiveC
 import MBProgressHUD
 import RxSwift
+import RxCocoa
+import RxRelay
 
-//==================================================
-// MARK: - キーボードイベント
-//==================================================
-
-struct AssociatedKeys {
-    static var activeTextField: UInt8 = 0
-    static var keyboardHeight: UInt8 = 1
-}
 
 extension UIViewController: UITextFieldDelegate {
+
+    private struct AssociatedKeys {
+        static var activeTextField: UInt8 = 0
+        static var keyboardHeight: UInt8 = 1
+    }
 
     private(set) var keyboardHeight: CGFloat {
         get {
@@ -38,8 +37,8 @@ extension UIViewController: UITextFieldDelegate {
 
     // キーボードを監視する
     func setupObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
 
@@ -49,11 +48,11 @@ extension UIViewController: UITextFieldDelegate {
         self.keyboardHeight = keyboardFrame.height
     }
 
-    @objc func keyboardWillShow(notification: Notification) {
+    @objc func keyboardWillShow() {
         arrangeViewOffsetFromKeyboard()
     }
 
-    @objc func keyboardWillHide(notification: Notification) {
+    @objc func keyboardWillHide() {
         if self.view.frame.origin.y != 0.0 {
             self.view.frame.origin.y = 0.0
         }
@@ -113,11 +112,22 @@ extension UIViewController {
 extension UIViewController {
     func createAlert(message: String) {
         UIAlertController
-            .showDialog(from: self,
-                        title: "",
-                        message: message,
-                        cancelAction: AlertAction.okay)
+            .showDialog(
+                from: self,
+                title: "",
+                message: message,
+                cancelAction: AlertAction.okay)
         .subscribe()
         .disposed(by: DisposeBag())
+    }
+}
+
+@objc extension UIViewController {
+    func registerForegroundNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    @objc private func willEnterForeground() {
+        // Do something
     }
 }

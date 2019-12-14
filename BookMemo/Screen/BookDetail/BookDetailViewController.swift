@@ -20,16 +20,6 @@ final class BookDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    //==================================================
-    // MARK: - Presentation
-    //==================================================
-
-    private let dateFormat: DateFormatter = {
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "yyyy/MM/dd"
-        return dateFormat
-    }()
-
     private let inputDatePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
@@ -125,7 +115,7 @@ final class BookDetailViewController: UIViewController {
         textField.borderStyle = .roundedRect
         textField.textAlignment = .center
         textField.textColor = .gray
-        textField.text = dateFormat.string(from: inputDatePicker.date)
+        textField.text = Date.convertToString(from: inputDatePicker.date)
         // textFieldにdatePicker、toolBarをセット
         textField.inputView = inputDatePicker
         textField.inputAccessoryView = pickerToolBar
@@ -158,13 +148,9 @@ final class BookDetailViewController: UIViewController {
 
     @objc private func didToolBarButtonTapped(_ sender: UIBarButtonItem) {
         let pickerDate = inputDatePicker.date
-        purchaseDateTextField.text = dateFormat.string(from: pickerDate as Date)
+        purchaseDateTextField.text = Date.convertToString(from: pickerDate as Date)
         view.endEditing(true)
     }
-
-    //==================================================
-    // MARK: - Routing
-    //==================================================
 
     private lazy var routing: BookDetailRouting = {
         let routing = BookDetailRoutingImpl()
@@ -172,15 +158,7 @@ final class BookDetailViewController: UIViewController {
         return routing
     }()
 
-    //==================================================
-    // MARK: - Rx
-    //==================================================
-
     private let disposeBag: DisposeBag = .init()
-
-    //==================================================
-    // MARK: - UIViewController override
-    //==================================================
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -203,10 +181,16 @@ extension BookDetailViewController {
         title = "書籍編集"
         navigationItem.rightBarButtonItem = saveButton
 
-        [bookImageView, imagePutButton, bookNameLabel, bookNameTextField, priceLabel, priceTextField, purchaseDateLabel, purchaseDateTextField].forEach {
-            self.view.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        view.add(
+            bookImageView,
+            imagePutButton,
+            bookNameLabel,
+            bookNameTextField,
+            priceLabel,
+            priceTextField,
+            purchaseDateLabel,
+            purchaseDateTextField
+        )
 
         [
             bookImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.Constraint.bookImageTopConstraint),
@@ -248,7 +232,14 @@ extension BookDetailViewController {
     }
 
     private func bindUI() {
-        let input = BookDetailViewModel.Input(didSaveButtonTapped: saveButton.rx.tap.asObservable(), bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(), priceText: priceTextField.rx.text.orEmpty.asObservable(), purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(), selectedImage: imageSubject.asObservable(), id: selectedBook.id)
+        let input = BookDetailViewModel.Input(
+            didSaveButtonTapped: saveButton.rx.tap.asObservable(),
+            bookNameText: bookNameTextField.rx.text.orEmpty.asObservable(),
+            priceText: priceTextField.rx.text.orEmpty.asObservable(),
+            purchaseDateText: purchaseDateTextField.rx.text.orEmpty.asObservable(),
+            selectedImage: imageSubject.asObservable(),
+            id: selectedBook.id
+        )
 
         let output = viewModel.transform(input: input)
 

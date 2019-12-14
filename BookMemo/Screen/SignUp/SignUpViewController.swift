@@ -74,25 +74,13 @@ class SignUpViewController: UIViewController {
         dismiss(animated: true)
     }
 
-    //==================================================
-    // MARK: - Routing
-    //==================================================
-
     private lazy var routing: SignUpRouting = {
         let routing = SignUpRoutingImpl()
         routing.viewController = self
         return routing
     }()
 
-    //==================================================
-    // MARK: - Rx
-    //==================================================
-
     private let disposeBag: DisposeBag = .init()
-
-    //==================================================
-    // MARK: - UIViewController override
-    //==================================================
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,10 +97,14 @@ extension SignUpViewController {
         navigationItem.leftBarButtonItem = cancelButton
         navigationItem.rightBarButtonItem = saveButton
 
-        [emailLabel, passwordLabel, confirmPasswordLabel, emailTextField, passwordTextField, confirmPasswordTextField].forEach {
-            self.view.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        view.add(
+            emailLabel,
+            passwordLabel,
+            confirmPasswordLabel,
+            emailTextField,
+            passwordTextField,
+            confirmPasswordTextField
+        )
 
         [emailLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
          emailLabel.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 16),
