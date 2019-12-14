@@ -35,18 +35,34 @@ extension SignInViewModel {
             $0.count >= 6
         }
 
-        let isValid = Observable.combineLatest(emailTextRelay, passwordRelay) { $0 && $1 }
-        let parameter = Observable.combineLatest(input.emailText, input.passwordText)
+        let isValid = Observable.combineLatest(
+            emailTextRelay,
+            passwordRelay
+        ) {
+            $0 && $1
+        }
+
+        let parameter = Observable.combineLatest(
+            input.emailText,
+            input.passwordText
+        )
 
         let response = input.didSignInButtonTapped
             .withLatestFrom(parameter)
-            .flatMap { param -> Observable<Event<SignInAPI.Response>> in
-                let info = AuthModel(email: param.0, password: param.1)
+            .flatMap { (email, password) -> Observable<Event<SignInAPI.Response>> in
+                let info = AuthModel(
+                    email: email,
+                    password: password
+                )
                 return self.dependency.SignIn(with: info)
                 .materialize()
         }
         .share(replay: 1)
 
-        return OutPut(result: response.elements(), error: response.errors(), isValid: isValid)
+        return OutPut(
+            result: response.elements(),
+            error: response.errors(),
+            isValid: isValid
+        )
     }
 }

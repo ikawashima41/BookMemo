@@ -43,25 +43,44 @@ extension BookDetailViewModel: ViewModelType {
             UIImage.convertImageToString(image: $0)
         }
 
-        let isValid = Observable.combineLatest(bookNameTextRelay, priceTextBoolRelay, purchaseDateTextReray) {
+        let isValid = Observable.combineLatest(
+            bookNameTextRelay,
+            priceTextBoolRelay,
+            purchaseDateTextReray
+        ) {
             $0 && $1 && $2
         }
 
         let parameter = Observable.combineLatest(
-        input.bookNameText,
-        priceTextRelay,
-        input.purchaseDateText,
-        selectedImageRelay) {
-        (name: $0, price: $1, purchaseDate: $2, imageStr: $3)}
+            input.bookNameText,
+            priceTextRelay,
+            input.purchaseDateText,
+            selectedImageRelay
+        ) {(
+            name: $0,
+            price: $1,
+            purchaseDate: $2,
+            imageStr: $3
+        )}
 
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
             .flatMap { param -> Observable<Event<UpdateBookAPI.Response>> in
-                let info = BookModel(name: param.name, image: param.imageStr, price: param.price, purchaseDate: param.purchaseDate, id: input.id)
+                let info = BookModel(
+                    name: param.name,
+                    image: param.imageStr,
+                    price: param.price,
+                    purchaseDate: param.purchaseDate,
+                    id: input.id
+                )
                 return self.dependency.update(with: info)
                 .materialize()
         }.share(replay: 1)
 
-        return Output(result: response.elements(), error: response.errors(), isValid: isValid)
+        return Output(
+            result: response.elements(),
+            error: response.errors(),
+            isValid: isValid
+        )
     }
 }

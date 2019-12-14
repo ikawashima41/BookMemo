@@ -38,18 +38,31 @@ extension SignUpViewModel: ViewModelType {
             $0.count >= 6
         }
 
-        let isValid = Observable.combineLatest(emailTextRelay, passwordTextRelay, confirmTextRelay) { $0 && $1 && $2 }
+        let isValid = Observable.combineLatest(
+            emailTextRelay,
+            passwordTextRelay,
+            confirmTextRelay
+        ) {
+            $0 && $1 && $2
+        }
 
         let parameter = Observable.combineLatest(input.emailText, input.passwordText)
 
         let response = input.didSaveButtonTapped
             .withLatestFrom(parameter)
             .flatMap { (email, password) -> Observable<Event<SignUpAPI.Response>> in
-                let info = AuthModel(email: email, password: password)
+                let info = AuthModel(
+                    email: email,
+                    password: password
+                )
                 return self.dependency.signUp(with: info)
                 .materialize()
         }.share(replay: 1)
 
-        return OutPut(result: response.elements(), error: response.errors(), isValid: isValid)
+        return OutPut(
+            result: response.elements(),
+            error: response.errors(),
+            isValid: isValid
+        )
     }
 }
