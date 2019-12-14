@@ -97,6 +97,7 @@
 		5BFDE15F23A5437700F0EBD9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15E23A5437700F0EBD9 /* Date+Extensions.swift */; };
 		5BFDE16123A551F600F0EBD9 /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16023A551F600F0EBD9 /* UIType.swift */; };
 		5BFDE16323A5611E00F0EBD9 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */; };
+		5BFDE16523A57EFC00F0EBD9 /* SignUpUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* BookDetailViewController.swift */; };
 		5E1367DA22C74948006E5475 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* BookDetailViewModel.swift */; };
@@ -246,6 +247,7 @@
 		5BFDE15E23A5437700F0EBD9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		5BFDE16023A551F600F0EBD9 /* UIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUI.swift; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 				5EFCE1AB22C72F0A004B8D3C /* SignUpViewController.swift */,
 				5EFCE1AD22C72F2B004B8D3C /* SignUpViewModel.swift */,
 				5EFCE1AF22C72F3F004B8D3C /* SignUpRouting.swift */,
+				5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1029,6 +1032,7 @@
 				5E1367DA22C74948006E5475 /* BookDetailViewModel.swift in Sources */,
 				5EFCE1AC22C72F0A004B8D3C /* SignUpViewController.swift in Sources */,
 				5EFCE1BA22C73214004B8D3C /* HomeTableViewCell.swift in Sources */,
+				5BFDE16523A57EFC00F0EBD9 /* SignUpUI.swift in Sources */,
 				5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */,
 				5E1367D822C748FF006E5475 /* BookDetailViewController.swift in Sources */,
 				5EFCE1A722C72C4D004B8D3C /* SignInViewModel.swift in Sources */,
