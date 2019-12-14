@@ -54,7 +54,6 @@
 		5BB389592349C61D00F1C06B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A68233A53ED0093495F /* Quick.framework */; };
 		5BB3895C2349C61D00F1C06B /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895A2349C61D00F1C06B /* RxTest.framework */; };
 		5BB3895D2349C61D00F1C06B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895B2349C61D00F1C06B /* RxBlocking.framework */; };
-		5BCE4A67233A4FAB0093495F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */; };
 		5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */; };
 		5BD6653023363814009A66B6 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652F23363814009A66B6 /* CameraService.swift */; };
 		5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */; };
@@ -98,6 +97,7 @@
 		5BFDE16123A551F600F0EBD9 /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16023A551F600F0EBD9 /* UIType.swift */; };
 		5BFDE16323A5611E00F0EBD9 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */; };
 		5BFDE16523A57EFC00F0EBD9 /* SignUpUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */; };
+		5BFDE16723A5880100F0EBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BFDE16623A5880100F0EBD9 /* GoogleService-Info.plist */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* BookDetailViewController.swift */; };
 		5E1367DA22C74948006E5475 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* BookDetailViewModel.swift */; };
@@ -204,7 +204,6 @@
 		5BAF50D42316D7C200584FB1 /* RoutingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingType.swift; sourceTree = "<group>"; };
 		5BB3895A2349C61D00F1C06B /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		5BB3895B2349C61D00F1C06B /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BCE4A68233A53ED0093495F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		5BCE4A69233A53ED0093495F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutAnchor+Extensions.swift"; sourceTree = "<group>"; };
@@ -248,6 +247,7 @@
 		5BFDE16023A551F600F0EBD9 /* UIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUI.swift; sourceTree = "<group>"; };
+		5BFDE16623A5880100F0EBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
@@ -545,7 +545,7 @@
 				5BD6652E233637F5009A66B6 /* Service */,
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
-				5BCE4A66233A4FAB0093495F /* GoogleService-Info.plist */,
+				5BFDE16623A5880100F0EBD9 /* GoogleService-Info.plist */,
 				5E649BD822C3872800E562F1 /* Info.plist */,
 			);
 			path = BookMemo;
@@ -897,7 +897,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */,
-				5BCE4A67233A4FAB0093495F /* GoogleService-Info.plist in Resources */,
+				5BFDE16723A5880100F0EBD9 /* GoogleService-Info.plist in Resources */,
 				5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */,
 				5ED32C3C2332580200D243AC /* splash.json in Resources */,
 			);

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>808053611397-k5uffj3at22rtqd6sj8av842fcd4hvm7.apps.googleusercontent.com</string>
+	<string>1082579550088-j33f84uhed57j3r5vq5mbiicm6gtc6lc.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.808053611397-k5uffj3at22rtqd6sj8av842fcd4hvm7</string>
+	<string>com.googleusercontent.apps.1082579550088-j33f84uhed57j3r5vq5mbiicm6gtc6lc</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDzi9xFG233Av1qKnt-sG18xr2D56Qw0oY</string>
+	<string>AIzaSyAXhcftjAP9JeJdj-VnfRlKNZbEyTMjTmA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>808053611397</string>
+	<string>1082579550088</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.nabezawa.RxBookManager-iOS</string>
+	<string>com.ikawashima41.BookMemo</string>
 	<key>PROJECT_ID</key>
-	<string>rx-bookmanager-ios</string>
+	<string>bookmemo-d5e18</string>
 	<key>STORAGE_BUCKET</key>
-	<string>rx-bookmanager-ios.appspot.com</string>
+	<string>bookmemo-d5e18.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:808053611397:ios:a3b233fec7753f23</string>
+	<string>1:1082579550088:ios:39f31f7bfe63e5527c043d</string>
 	<key>DATABASE_URL</key>
-	<string>https://rx-bookmanager-ios.firebaseio.com</string>
+	<string>https://bookmemo-d5e18.firebaseio.com</string>
 </dict>
 </plist>
