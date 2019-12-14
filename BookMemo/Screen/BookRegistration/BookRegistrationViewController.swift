@@ -157,17 +157,18 @@ final class BookRegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupUI()
+
+        setupLayout()
         setupNavItem()
         setupObserver()
         bindUI()
-
     }
 }
 
 extension BookRegistrationViewController {
-    private func setupUI() {
+    private func setupLayout() {
+
+        view.backgroundColor = .white
 
         view.add(bookImageView, imagePutButton, bookNameLabel, bookNameTextField, priceLabel, priceTextField, purchaseDateLabel, purchaseDateTextField)
 

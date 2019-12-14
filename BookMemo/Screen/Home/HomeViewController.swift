@@ -37,7 +37,6 @@ final class HomeViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = Constants.Size.tableViewRowHeight
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.className)
         return tableView
     }()
 

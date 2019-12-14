@@ -1,7 +1,7 @@
 import UIKit
 import Nuke
 
-class HomeTableViewCell: UITableViewCell {
+final class HomeTableViewCell: UITableViewCell {
 
     private let bookImage: UIImageView = {
         let bookImage = UIImageView()

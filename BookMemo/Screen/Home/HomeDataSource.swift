@@ -2,7 +2,6 @@ import UIKit
 
 final class HomeDataSource: NSObject {
 
-    weak var viewController: UIViewController?
     private var viewModel: HomeViewModel
     private var didCellTapped: (BookInfomation) -> Void
 
@@ -14,6 +13,7 @@ final class HomeDataSource: NSObject {
     func configure(with tableView: UITableView) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.className)
     }
 }
 
@@ -23,8 +23,8 @@ extension HomeDataSource: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // cellの生成
-         let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className, for: indexPath) as! HomeTableViewCell
+
+        let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.className, for: indexPath) as! HomeTableViewCell
 
         cell.accessoryType = .disclosureIndicator
         cell.configureWithBook(book: viewModel.books[indexPath.row])
