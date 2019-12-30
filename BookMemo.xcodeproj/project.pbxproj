@@ -50,10 +50,6 @@
 		5BA8F4D023A056E700C354D2 /* BookDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D964B22F0428E00CD332B /* BookDataStoreTests.swift */; };
 		5BAF50D12316CDF200584FB1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D02316CDF200584FB1 /* ViewModelType.swift */; };
 		5BAF50D52316D7C200584FB1 /* RoutingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF50D42316D7C200584FB1 /* RoutingType.swift */; };
-		5BB389582349C61D00F1C06B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A69233A53ED0093495F /* Nimble.framework */; };
-		5BB389592349C61D00F1C06B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BCE4A68233A53ED0093495F /* Quick.framework */; };
-		5BB3895C2349C61D00F1C06B /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895A2349C61D00F1C06B /* RxTest.framework */; };
-		5BB3895D2349C61D00F1C06B /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895B2349C61D00F1C06B /* RxBlocking.framework */; };
 		5BD6652D23363152009A66B6 /* NSLayoutAnchor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652C23363152009A66B6 /* NSLayoutAnchor+Extensions.swift */; };
 		5BD6653023363814009A66B6 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6652F23363814009A66B6 /* CameraService.swift */; };
 		5BD6653223363C03009A66B6 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD6653123363C03009A66B6 /* AVCaptureDevice+Extensions.swift */; };
@@ -87,6 +83,11 @@
 		5BD665732336733B009A66B6 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD665712336733B009A66B6 /* nanopb.framework */; };
 		5BD6657623367766009A66B6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6657423367765009A66B6 /* Fabric.framework */; };
 		5BD6657723367766009A66B6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BD6657523367765009A66B6 /* Crashlytics.framework */; };
+		5BEBD1E723BA5B3700173E96 /* BookMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEBD1E623BA5B3700173E96 /* BookMemoTests.swift */; };
+		5BEBD1EE23BA5B4200173E96 /* BookMemoDefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* BookMemoDefaultTests.swift */; };
+		5BEBD1F023BA5B5400173E96 /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEBD1C723BA574900173E96 /* SignInViewModelTests.swift */; };
+		5BEBD1F123BA5C0800173E96 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895B2349C61D00F1C06B /* RxBlocking.framework */; };
+		5BEBD1F223BA5C0800173E96 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BB3895A2349C61D00F1C06B /* RxTest.framework */; };
 		5BFDE14E23A4DB2F00F0EBD9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE14D23A4DB2F00F0EBD9 /* Constant.swift */; };
 		5BFDE15223A50E3E00F0EBD9 /* BookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15123A50E3E00F0EBD9 /* BookEntity.swift */; };
 		5BFDE15523A5106D00F0EBD9 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE15423A5106D00F0EBD9 /* UIViewController+Rx.swift */; };
@@ -111,7 +112,6 @@
 		5E649BCD22C3872700E562F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BCC22C3872700E562F1 /* AppDelegate.swift */; };
 		5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD322C3872800E562F1 /* Assets.xcassets */; };
 		5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */; };
-		5E649BE222C3872800E562F1 /* BookMemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E649BE122C3872800E562F1 /* BookMemoTests.swift */; };
 		5EC81D9C22C5CD0F005B74E1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
 		5EC81D9E22C5CD30005B74E1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5EC81D9F22C5CD44005B74E1 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BE022C5A77C00C9B547 /* RxCocoa.framework */; };
@@ -156,12 +156,12 @@
 			remoteGlobalIDString = 5BA8F42D239FAC1600C354D2;
 			remoteInfo = DataManager;
 		};
-		5E649BDE22C3872800E562F1 /* PBXContainerItemProxy */ = {
+		5BEBD1E923BA5B3700173E96 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E649BC122C3872700E562F1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5E649BC822C3872700E562F1;
-			remoteInfo = "RxBookManager-iOS";
+			remoteInfo = BookMemo;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -237,6 +237,10 @@
 		5BD665712336733B009A66B6 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		5BD6657423367765009A66B6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		5BD6657523367765009A66B6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		5BEBD1C723BA574900173E96 /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
+		5BEBD1E423BA5B3700173E96 /* BookMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BEBD1E623BA5B3700173E96 /* BookMemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMemoTests.swift; sourceTree = "<group>"; };
+		5BEBD1E823BA5B3700173E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BFDE14D23A4DB2F00F0EBD9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5BFDE15123A50E3E00F0EBD9 /* BookEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEntity.swift; sourceTree = "<group>"; };
 		5BFDE15423A5106D00F0EBD9 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -280,9 +284,7 @@
 		5E649BD322C3872800E562F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E649BD622C3872800E562F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E649BD822C3872800E562F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E649BDD22C3872800E562F1 /* BookMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookMemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E649BE122C3872800E562F1 /* BookMemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMemoTests.swift; sourceTree = "<group>"; };
-		5E649BE322C3872800E562F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E649BE122C3872800E562F1 /* BookMemoDefaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMemoDefaultTests.swift; sourceTree = "<group>"; };
 		5E885BDA22C5A72D00C9B547 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		5E885BDC22C5A74200C9B547 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		5E885BDE22C5A76200C9B547 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -329,6 +331,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BEBD1E123BA5B3700173E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BEBD1F123BA5C0800173E96 /* RxBlocking.framework in Frameworks */,
+				5BEBD1F223BA5C0800173E96 /* RxTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E649BC622C3872700E562F1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,17 +378,6 @@
 				5BD6655323366AAD009A66B6 /* FirebaseAnalytics.framework in Frameworks */,
 				5BD6655723366AAD009A66B6 /* FIRAnalyticsConnector.framework in Frameworks */,
 				5BD6657623367766009A66B6 /* Fabric.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E649BDA22C3872800E562F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5BB3895C2349C61D00F1C06B /* RxTest.framework in Frameworks */,
-				5BB3895D2349C61D00F1C06B /* RxBlocking.framework in Frameworks */,
-				5BB389582349C61D00F1C06B /* Nimble.framework in Frameworks */,
-				5BB389592349C61D00F1C06B /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +464,25 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		5BEBD1C923BA575000173E96 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5BEBD1C723BA574900173E96 /* SignInViewModelTests.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5BEBD1E523BA5B3700173E96 /* BookMemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5BEBD1E623BA5B3700173E96 /* BookMemoTests.swift */,
+				5BEBD1C923BA575000173E96 /* ViewModel */,
+				5E649BE122C3872800E562F1 /* BookMemoDefaultTests.swift */,
+				5BEBD1E823BA5B3700173E96 /* Info.plist */,
+			);
+			path = BookMemoTests;
+			sourceTree = "<group>";
+		};
 		5BFDE14C23A4D45A00F0EBD9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,9 +536,9 @@
 			isa = PBXGroup;
 			children = (
 				5E649BCB22C3872700E562F1 /* BookMemo */,
-				5E649BE022C3872800E562F1 /* BookMemoTests */,
 				5BA8F42F239FAC1600C354D2 /* DataManager */,
 				5BA8F43C239FAC1600C354D2 /* DataManagerTests */,
+				5BEBD1E523BA5B3700173E96 /* BookMemoTests */,
 				5E649BCA22C3872700E562F1 /* Products */,
 				5E885BD922C5A72C00C9B547 /* Frameworks */,
 			);
@@ -529,9 +548,9 @@
 			isa = PBXGroup;
 			children = (
 				5E649BC922C3872700E562F1 /* BookMemo.app */,
-				5E649BDD22C3872800E562F1 /* BookMemoTests.xctest */,
 				5BA8F42E239FAC1600C354D2 /* DataManager.framework */,
 				5BA8F436239FAC1600C354D2 /* DataManagerTests.xctest */,
+				5BEBD1E423BA5B3700173E96 /* BookMemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -549,15 +568,6 @@
 				5E649BD822C3872800E562F1 /* Info.plist */,
 			);
 			path = BookMemo;
-			sourceTree = "<group>";
-		};
-		5E649BE022C3872800E562F1 /* BookMemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				5E649BE122C3872800E562F1 /* BookMemoTests.swift */,
-				5E649BE322C3872800E562F1 /* Info.plist */,
-			);
-			path = BookMemoTests;
 			sourceTree = "<group>";
 		};
 		5E885BD922C5A72C00C9B547 /* Frameworks */ = {
@@ -791,6 +801,25 @@
 			productReference = 5BA8F436239FAC1600C354D2 /* DataManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BEBD1E323BA5B3700173E96 /* BookMemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BEBD1EB23BA5B3700173E96 /* Build configuration list for PBXNativeTarget "BookMemoTests" */;
+			buildPhases = (
+				5BEBD1E023BA5B3700173E96 /* Sources */,
+				5BEBD1E123BA5B3700173E96 /* Frameworks */,
+				5BEBD1E223BA5B3700173E96 /* Resources */,
+				5BEBD1F323BA5C1000173E96 /* Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BEBD1EA23BA5B3700173E96 /* PBXTargetDependency */,
+			);
+			name = BookMemoTests;
+			productName = BookMemoTests;
+			productReference = 5BEBD1E423BA5B3700173E96 /* BookMemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5E649BC822C3872700E562F1 /* BookMemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E649BE622C3872800E562F1 /* Build configuration list for PBXNativeTarget "BookMemo" */;
@@ -812,32 +841,13 @@
 			productReference = 5E649BC922C3872700E562F1 /* BookMemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5E649BDC22C3872800E562F1 /* BookMemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E649BE922C3872800E562F1 /* Build configuration list for PBXNativeTarget "BookMemoTests" */;
-			buildPhases = (
-				5E649BD922C3872800E562F1 /* Sources */,
-				5E649BDA22C3872800E562F1 /* Frameworks */,
-				5E649BDB22C3872800E562F1 /* Resources */,
-				5BB3895E2349CE0A00F1C06B /* Carthage */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E649BDF22C3872800E562F1 /* PBXTargetDependency */,
-			);
-			name = BookMemoTests;
-			productName = "RxBookManager-iOSTests";
-			productReference = 5E649BDD22C3872800E562F1 /* BookMemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		5E649BC122C3872700E562F1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = nabezawa;
 				TargetAttributes = {
@@ -847,12 +857,12 @@
 					5BA8F435239FAC1600C354D2 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
+					5BEBD1E323BA5B3700173E96 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 5E649BC822C3872700E562F1;
+					};
 					5E649BC822C3872700E562F1 = {
 						CreatedOnToolsVersion = 10.1;
-					};
-					5E649BDC22C3872800E562F1 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 5E649BC822C3872700E562F1;
 					};
 				};
 			};
@@ -870,7 +880,7 @@
 			projectRoot = "";
 			targets = (
 				5E649BC822C3872700E562F1 /* BookMemo */,
-				5E649BDC22C3872800E562F1 /* BookMemoTests */,
+				5BEBD1E323BA5B3700173E96 /* BookMemoTests */,
 				5BA8F42D239FAC1600C354D2 /* DataManager */,
 				5BA8F435239FAC1600C354D2 /* DataManagerTests */,
 			);
@@ -892,6 +902,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BEBD1E223BA5B3700173E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E649BC722C3872700E562F1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -903,38 +920,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E649BDB22C3872800E562F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5BB3895E2349CE0A00F1C06B /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
 		5BD6653D233640DF009A66B6 /* AWS Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -952,6 +940,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework/strip-frameworks.sh\"\n";
+		};
+		5BEBD1F323BA5C1000173E96 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		5E2DD91822C5C21C005410E1 /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1022,6 +1030,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BEBD1E023BA5B3700173E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BEBD1EE23BA5B4200173E96 /* BookMemoDefaultTests.swift in Sources */,
+				5BEBD1F023BA5B5400173E96 /* SignInViewModelTests.swift in Sources */,
+				5BEBD1E723BA5B3700173E96 /* BookMemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E649BC522C3872700E562F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1076,14 +1094,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E649BD922C3872800E562F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E649BE222C3872800E562F1 /* BookMemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1102,10 +1112,10 @@
 			target = 5BA8F42D239FAC1600C354D2 /* DataManager */;
 			targetProxy = 5BA8F441239FAC1600C354D2 /* PBXContainerItemProxy */;
 		};
-		5E649BDF22C3872800E562F1 /* PBXTargetDependency */ = {
+		5BEBD1EA23BA5B3700173E96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5E649BC822C3872700E562F1 /* BookMemo */;
-			targetProxy = 5E649BDE22C3872800E562F1 /* PBXContainerItemProxy */;
+			targetProxy = 5BEBD1E923BA5B3700173E96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1224,6 +1234,56 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5BEBD1EC23BA5B3700173E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74J2MM2NXF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BookMemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IichiroKawashima.BookMemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookMemo.app/BookMemo";
+			};
+			name = Debug;
+		};
+		5BEBD1ED23BA5B3700173E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 74J2MM2NXF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BookMemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.IichiroKawashima.BookMemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookMemo.app/BookMemo";
 			};
 			name = Release;
 		};
@@ -1413,56 +1473,6 @@
 			};
 			name = Release;
 		};
-		5E649BEA22C3872800E562F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "RxBookManager-iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nabezawa.RxBookManager-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookMemo.app/BookMemo";
-			};
-			name = Debug;
-		};
-		5E649BEB22C3872800E562F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "RxBookManager-iOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nabezawa.RxBookManager-iOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookMemo.app/BookMemo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1484,6 +1494,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5BEBD1EB23BA5B3700173E96 /* Build configuration list for PBXNativeTarget "BookMemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BEBD1EC23BA5B3700173E96 /* Debug */,
+				5BEBD1ED23BA5B3700173E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E649BC422C3872700E562F1 /* Build configuration list for PBXProject "BookMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1498,15 +1517,6 @@
 			buildConfigurations = (
 				5E649BE722C3872800E562F1 /* Debug */,
 				5E649BE822C3872800E562F1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E649BE922C3872800E562F1 /* Build configuration list for PBXNativeTarget "BookMemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E649BEA22C3872800E562F1 /* Debug */,
-				5E649BEB22C3872800E562F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
