@@ -536,9 +536,9 @@
 			isa = PBXGroup;
 			children = (
 				5E649BCB22C3872700E562F1 /* BookMemo */,
+				5BEBD1E523BA5B3700173E96 /* BookMemoTests */,
 				5BA8F42F239FAC1600C354D2 /* DataManager */,
 				5BA8F43C239FAC1600C354D2 /* DataManagerTests */,
-				5BEBD1E523BA5B3700173E96 /* BookMemoTests */,
 				5E649BCA22C3872700E562F1 /* Products */,
 				5E885BD922C5A72C00C9B547 /* Frameworks */,
 			);
