@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B0DA53D23BE696900510BC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B0DA53C23BE696900510BC2 /* GoogleService-Info.plist */; };
+		5B0DA54023BE880900510BC2 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDA22C5A72D00C9B547 /* APIKit.framework */; };
+		5B0DA54123BE880900510BC2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E885BDE22C5A76200C9B547 /* RxSwift.framework */; };
 		5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */; };
 		5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */; };
 		5B3D95C52317FBF600F917D8 /* SplashRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C42317FBF600F917D8 /* SplashRouting.swift */; };
@@ -325,6 +327,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B0DA54023BE880900510BC2 /* APIKit.framework in Frameworks */,
+				5B0DA54123BE880900510BC2 /* RxSwift.framework in Frameworks */,
 				5BA8F437239FAC1600C354D2 /* DataManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,6 +789,7 @@
 				5BA8F432239FAC1600C354D2 /* Sources */,
 				5BA8F433239FAC1600C354D2 /* Frameworks */,
 				5BA8F434239FAC1600C354D2 /* Resources */,
+				5B0DA53F23BE87A000510BC2 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -940,6 +945,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PROJECT_DIR}/Fabric.framework/run\"\n";
+		};
+		5B0DA53F23BE87A000510BC2 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		5BD6653D233640DF009A66B6 /* AWS Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1223,6 +1248,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DataManagerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1243,6 +1272,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DataManagerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

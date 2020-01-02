@@ -1,19 +1,23 @@
 import APIKit
 import RxSwift
 import XCTest
-import RxTest
-import RxBlocking
 
 @testable import DataManager
 
 class BookDataStoreTests: XCTestCase {
 
-    private let dataStore = BookDataStoreImpl()
+    private var dataStore: BookDataStoreMock!
+    private var bookListModel: BookListModel!
+    private var bookModel: BookModel!
 
     private let disposebag = DisposeBag()
 
     override func setUp() {
         super.setUp()
+
+        bookListModel = BookListModel(limit: 5, page: 1)
+        bookModel = BookModel(name: "Book", image: "", price: 1000, purchaseDate: "2020-01-01")
+        dataStore = BookDataStoreMock()
     }
 
     override func tearDown() {
@@ -21,15 +25,12 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testFetch() {
-        let model = BookListModel(limit: 5, page: 1)
         let exp = expectation(description: "fetchHomeRequest")
 
-        dataStore.fetch(with: model)
+        dataStore.fetch(with: bookListModel)
         .subscribe(onNext: { response in
-            print(response)
             exp.fulfill()
         }, onError: { error in
-            print(error)
             XCTAssert(false)
         }).disposed(by: disposebag)
 
@@ -37,15 +38,12 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testRegister() {
-        let model = BookModel(name: "花火", image: "image", price: 400, purchaseDate: "2019-07-31")
         let exp = expectation(description: "BookRegistrationRequest")
 
-        dataStore.register(with: model)
+        dataStore.register(with: bookModel)
         .subscribe(onNext: { response in
-            print(response)
             exp.fulfill()
         }, onError: { error in
-            print(error)
             XCTAssert(false)
         }).disposed(by: disposebag)
 
@@ -53,18 +51,31 @@ class BookDataStoreTests: XCTestCase {
     }
 
     func testUpdate() {
-        let model = BookModel(name: "花火祭り", image: "image", price: 2000, purchaseDate: "2019-08-04", id: 1508)
         let exp = expectation(description: "BookDetailRequest")
 
-        dataStore.update(with: model)
+        dataStore.update(with: bookModel)
         .subscribe(onNext: { response in
-            print(response)
             exp.fulfill()
         }, onError: { error in
-            print(error)
             XCTAssert(false)
         }).disposed(by: disposebag)
 
         wait(for: [exp], timeout: 5.0)
+    }
+}
+
+extension BookDataStoreTests {
+    class BookDataStoreMock: BookDataStore {
+        func fetch(with info: BookListModel) -> Observable<FetchBookListAPI.Response> {
+            return Observable.empty()
+        }
+
+        func register(with info: BookModel) -> Observable<RegisterBookAPI.Response> {
+            return Observable.empty()
+        }
+
+        func update(with info: BookModel) -> Observable<UpdateBookAPI.Response> {
+            return Observable.empty()
+        }
     }
 }
