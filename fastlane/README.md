@@ -20,7 +20,7 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane ios beta
 ```
-Send Notice Slack
+Create ipa as development
 
 ----
 
