@@ -30,33 +30,70 @@ platform :ios do
   end
 
   desc "Build app"
-  lane :build_app do
-    create_develop_ipa
-    upload_ipa
+  lane :beta do
+    custom_increment_build_number
   end
 
   desc "Create ipa and update build version"
-  private_lane :create_ipa do
+  private_lane :create_ipa do |options|
 
-    increment_build_number
+    # ex. Run 'fastlane create_app version:26'
+    # 引数に version が指定されていることを確認する
+    UI.user error!("Required build version.") unless options[:version]
+
+
+    # "./fastlane/builds/"+ Time.new.strftime('%Y-%m-%d-%H-%M')
 
     gym(
       configuration: "Debug",
-      scheme: "BookMemo",
+      scheme: ENV["SCHEME"],
       clean: true,
       include_bitcode: false,
       include_symbols: false,
-      output_directory: "./fastlane/builds/",
+      output_directory: "./fastlane/builds/#{options[:version]}",
       output_name: "BookMemo.ipa",
       export_method: "development",
       export_options: {
         signingStyle: "manual",
         provisioningProfiles: {
-            "com.IichiroKawashima.BookMemo" => "BookMemo",
+            ENV["BUNDLE_IDENTIFIER"] => "BookMemo",
             "com.IichiroKawashima.DataManager" => ""
         }
       }
     )
+
+    # Need to change provisioning file to distribution if we will upload to testFlight
+    # upload_to_testflight(
+    #   ipa: "./fastlane/builds/#{options[:version]}/BookMemo.ipa"
+    # )
+
+    download_dsyms(
+      version: 'latest'
+    )
+
+    upload_symbols_to_crashlytics(gsp_path: "./BookMemo/GoogleService-Info.plist")
+
+    clean_build_artifacts
+
+  end
+
+  desc "Increment build number"
+  lane :custom_increment_build_number do
+    increment_build_number
+
+    # get_build_numberを利用し、現在のビルド番号を取得、末尾の値を取得
+    trailing_number = get_build_number.split('.').last.to_i
+    # get_version_numberを利用し、ストアバージョンを取得、ビルド番号の末尾の値を1つ増やして連結
+    next_build_number = "#{trailing_number + 1}"
+    # increment_build_numberのオプションに作成したビルド番号を指定し、更新
+    increment_build_number(build_number: next_build_number)
+    
+    create_ipa version:next_build_number
+  end
+
+  desc "Upload dSYM to TestFlight"
+  private_lane :upload_dysm_to_crashlytics do
+    
   end
   
   desc "Upload ipa file to TestFlight"
@@ -64,19 +101,20 @@ platform :ios do
     
   end
 
-  after_all do
-    # slack(
-    #   slack_url: "https://hooks.slack.com/services/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",
-    #   message: "BookMemo build"
-    # )
+  after_all do |lane|
+    slack(
+      success: true,
+      slack_url: ENV["SLACK_URL"],
+      message: "#{lane} has suceeded."
+    )
   end
 
   error do |lane, exception|
-    #  slack(
-    #    slack_url: "https://hooks.slack.com/services/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",
-    #    message: exception.message,
-    #    success: false
-    #  )
+     slack(
+       slack_url: ENV["SLACK_URL"],
+       message: exception.message,
+       success: false
+     )
   end
 end
 

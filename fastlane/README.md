@@ -20,7 +20,12 @@ or alternatively using `brew cask install fastlane`
 ```
 fastlane ios beta
 ```
-Create ipa as development
+Build app
+### ios custom_increment_build_number
+```
+fastlane ios custom_increment_build_number
+```
+Increment build number
 
 ----
 

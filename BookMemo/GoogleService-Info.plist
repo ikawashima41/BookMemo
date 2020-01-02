@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1082579550088-j33f84uhed57j3r5vq5mbiicm6gtc6lc.apps.googleusercontent.com</string>
+	<string>1082579550088-oti7e4as6q83kg7sklaut5slh7ou82lt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1082579550088-j33f84uhed57j3r5vq5mbiicm6gtc6lc</string>
+	<string>com.googleusercontent.apps.1082579550088-oti7e4as6q83kg7sklaut5slh7ou82lt</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAXhcftjAP9JeJdj-VnfRlKNZbEyTMjTmA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ikawashima41.BookMemo</string>
+	<string>com.IichiroKawashima.BookMemo</string>
 	<key>PROJECT_ID</key>
 	<string>bookmemo-d5e18</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1082579550088:ios:39f31f7bfe63e5527c043d</string>
+	<string>1:1082579550088:ios:8b09da886f9106267c043d</string>
 	<key>DATABASE_URL</key>
 	<string>https://bookmemo-d5e18.firebaseio.com</string>
 </dict>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0DA53D23BE696900510BC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B0DA53C23BE696900510BC2 /* GoogleService-Info.plist */; };
 		5B3D95BD23177AC600F917D8 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */; };
 		5B3D95C32317FBDD00F917D8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */; };
 		5B3D95C52317FBF600F917D8 /* SplashRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D95C42317FBF600F917D8 /* SplashRouting.swift */; };
@@ -97,7 +98,6 @@
 		5BFDE16123A551F600F0EBD9 /* UIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16023A551F600F0EBD9 /* UIType.swift */; };
 		5BFDE16323A5611E00F0EBD9 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */; };
 		5BFDE16523A57EFC00F0EBD9 /* SignUpUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */; };
-		5BFDE16723A5880100F0EBD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BFDE16623A5880100F0EBD9 /* GoogleService-Info.plist */; };
 		5E066856231B89440045D901 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E066855231B89440045D901 /* UIImage+Extension.swift */; };
 		5E1367D822C748FF006E5475 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D722C748FF006E5475 /* BookDetailViewController.swift */; };
 		5E1367DA22C74948006E5475 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1367D922C74948006E5475 /* BookDetailViewModel.swift */; };
@@ -182,6 +182,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B0DA53C23BE696900510BC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B3D95BC23177AC600F917D8 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		5B3D95C22317FBDD00F917D8 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		5B3D95C42317FBF600F917D8 /* SplashRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouting.swift; sourceTree = "<group>"; };
@@ -249,7 +250,6 @@
 		5BFDE16023A551F600F0EBD9 /* UIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIType.swift; sourceTree = "<group>"; };
 		5BFDE16223A5611E00F0EBD9 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		5BFDE16423A57EFB00F0EBD9 /* SignUpUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUI.swift; sourceTree = "<group>"; };
-		5BFDE16623A5880100F0EBD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5E066855231B89440045D901 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		5E1367D722C748FF006E5475 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		5E1367D922C74948006E5475 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
@@ -560,8 +560,8 @@
 				5EFCE19322C63808004B8D3C /* Utility */,
 				5BD6652E233637F5009A66B6 /* Service */,
 				5E649BCC22C3872700E562F1 /* AppDelegate.swift */,
+				5B0DA53C23BE696900510BC2 /* GoogleService-Info.plist */,
 				5E649BD522C3872800E562F1 /* LaunchScreen.storyboard */,
-				5BFDE16623A5880100F0EBD9 /* GoogleService-Info.plist */,
 				5E649BD822C3872800E562F1 /* Info.plist */,
 			);
 			path = BookMemo;
@@ -826,6 +826,7 @@
 				5E2DD91822C5C21C005410E1 /* Copy Carthage Frameworks */,
 				5BD6653C233640BB009A66B6 /* Embed Frameworks */,
 				5BD6653D233640DF009A66B6 /* AWS Frameworks */,
+				5B0DA53E23BE6AFE00510BC2 /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -913,7 +914,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E649BD722C3872800E562F1 /* LaunchScreen.storyboard in Resources */,
-				5BFDE16723A5880100F0EBD9 /* GoogleService-Info.plist in Resources */,
+				5B0DA53D23BE696900510BC2 /* GoogleService-Info.plist in Resources */,
 				5E649BD422C3872800E562F1 /* Assets.xcassets in Resources */,
 				5ED32C3C2332580200D243AC /* splash.json in Resources */,
 			);
@@ -922,6 +923,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5B0DA53E23BE6AFE00510BC2 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Fabric.framework/run\"\n";
+		};
 		5BD6653D233640DF009A66B6 /* AWS Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1135,11 +1154,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 30;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PGP7B8YQAS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 26;
+				DYLIB_CURRENT_VERSION = 30;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1169,11 +1188,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 30;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 26;
+				DYLIB_CURRENT_VERSION = 30;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
