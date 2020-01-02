@@ -19,20 +19,26 @@ platform :ios do
 
   before_all do
     
+    desc "Run Carthage bootstrap command"
+    carthage(
+      command: "bootstrap", 
+      platform: "iOS",
+      configuration: "Debug",
+      cache_builds: true
+    )
+
   end
 
-  desc "Create ipa as development"
-  lane :beta do
-#    enable_automatic_code_signing
+  desc "Build app"
+  lane :build_app do
+    create_develop_ipa
+    upload_ipa
+  end
+
+  desc "Create ipa and update build version"
+  private_lane :create_ipa do
 
     increment_build_number
-
-    get_provisioning_profile(
-      app_identifier: "com.IichiroKawashima.BookMemo",
-      username: "i.kawashima41.dev@gmail.com",
-      development: true,
-      skip_install: false
-    )
 
     gym(
       configuration: "Debug",
@@ -51,9 +57,13 @@ platform :ios do
         }
       }
     )
-
   end
   
+  desc "Upload ipa file to TestFlight"
+  private_lane :upload_ipa do
+    
+  end
+
   after_all do
     # slack(
     #   slack_url: "https://hooks.slack.com/services/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",
