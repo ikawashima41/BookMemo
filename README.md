@@ -1,5 +1,5 @@
 # 📖 BookMemo
-BookMemo is book managemnt app.
+BookMemo is book management app.
 
 ## Environment 
 - Swift: 5.1
@@ -17,7 +17,7 @@ using fastlane and bitrise
 
 - Implemented MVVM Design Pattern using RxSwift
 
-Inspired by https://github.com/sergdort/CleanArchitectureRxSwift
+   Inspired by https://github.com/sergdort/CleanArchitectureRxSwift
 
 - Created embedded frameworks for Data layer
 - Created UI Programmatically
