@@ -2,10 +2,10 @@
 BookMemo is book managemnt app.
 
 ## Environment 
-Swift: 5.1
-Xcode: 11.3
-SwiftLint: latest version
-carthge: Latest version
+- Swift: 5.1
+- Xcode: 11.3
+- SwiftLint: latest version
+- carthge: Latest version
 
 ## Build 
 ` sh bootstrap.sh `
@@ -16,6 +16,7 @@ using fastlane and bitrise
 ## Explanation
 
 - Implemented MVVM Design Pattern using RxSwift
+
 Inspired by https://github.com/sergdort/CleanArchitectureRxSwift
 
 - Created embedded frameworks for Data layer
