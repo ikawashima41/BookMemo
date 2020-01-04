@@ -108,6 +108,8 @@ fastlane/test_output
 iOSInjectionProject/
 DataManager/Constant.swift
 
+BookMemo/Resource/AppSecret.swift
+
 ### Xcode ###
 # Xcode
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
